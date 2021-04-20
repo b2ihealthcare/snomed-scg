@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SNOMED CT Compositional Grammar UI
+Bundle-SymbolicName: com.b2international.snomed.scg.ui;singleton:=true
+Bundle-Version: 2.3.1.qualifier
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-Vendor: B2i Healthcare
+Require-Bundle: org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.xtend.lib;bundle-version="2.11.0",
+ org.eclipse.compare,
+ com.b2international.snomed.scg.ide
+Import-Package: org.apache.log4j
+Automatic-Module-Name: com.b2international.snomed.scg.ui

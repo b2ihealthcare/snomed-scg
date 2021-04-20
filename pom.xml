@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.b2international</groupId>
+	<artifactId>scg-parent</artifactId>
+	<version>2.3.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
+		<!-- Maven Dependency Versions -->
+		
+		<!-- Build tool/compiler versions -->
+		<tycho.version>2.2.0</tycho.version>
+		<tycho-extras.version>2.2.0</tycho-extras.version>
+		<xtend.compiler.version>2.23.0</xtend.compiler.version>
+		
+		<!-- Versioning -->
+		<maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+		<forceContextQualifier>${maven.build.timestamp}</forceContextQualifier>
+		
+		<!-- Deployment -->
+		<maven.repository.id>nexus_deployment</maven.repository.id>
+		<maven.releases.repository>https://nexus.b2i.sg/repository/maven-releases</maven.releases.repository>
+		<maven.snapshots.repository>https://nexus.b2i.sg/repository/maven-snapshots</maven.snapshots.repository>
+	
+	</properties>
+	
+	<modules>
+		<module>com.b2international.snomed.scg</module>
+		<module>com.b2international.snomed.scg.tests</module>
+		<module>com.b2international.snomed.scg.feature</module>
+		<module>com.b2international.snomed.scg.ide</module>
+		<module>com.b2international.snomed.scg.ui</module>
+		<module>com.b2international.snomed.scg.ui.feature</module>
+		<module>com.b2international.snomed.scg.update</module>
+	</modules>
+	
+	<repositories>
+		<repository>
+			<id>eclipse</id>
+			<url>https://download.eclipse.org/eclipse/updates/4.17/R-4.17-202009021800/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>orbit</id>
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20200224183213/repository/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>emf</id>
+			<url>http://download.eclipse.org/modeling/emf/emf/builds/release/2.23/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>xpand</id>
+			<url>https://download.eclipse.org/modeling/m2t/xpand/updates/releases/R201605260315/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>mwe</id>
+			<url>https://download.eclipse.org/modeling/emft/mwe/updates/releases/2.11.2/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>xtext</id>
+			<url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.23.0/</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<configuration>
+					<strictBinIncludes>false</strictBinIncludes>
+					<strictVersions>false</strictVersions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-source-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>plugin-source</id>
+						<goals>
+							<goal>plugin-source</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<pomDependencies>consider</pomDependencies>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-publisher-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<configuration>
+					<publishArtifacts>true</publishArtifacts>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-versions-plugin</artifactId>
+				<version>${tycho.version}</version>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-compiler-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<useProjectSettings>false</useProjectSettings>
+						<source>11</source>
+						<target>11</target>
+						<excludeResources>
+							<excludeResource>**/*.xtend</excludeResource>
+						</excludeResources>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-surefire-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<configuration>
+						<includes>
+							<include>**/*Test*.java</include>
+						</includes>
+						<useUIThread>false</useUIThread>
+						<failIfNoTests>false</failIfNoTests>
+						<trimStackTrace>false</trimStackTrace>
+<!-- 						<argLine>${testArgLine}</argLine> -->
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-packaging-plugin</artifactId>
+					<version>${tycho.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.eclipse.tycho.extras</groupId>
+							<artifactId>tycho-buildtimestamp-jgit</artifactId>
+							<version>${tycho-extras.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<timestampProvider>jgit</timestampProvider>
+						<jgit.ignore>
+							pom.xml
+						</jgit.ignore>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>${maven.repository.id}</id>
+			<url>${maven.releases.repository}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${maven.repository.id}</id>
+			<url>${maven.snapshots.repository}</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<url>https://github.com/b2ihealthcare/snomed-scg</url>
+		<connection>scm:git:ssh://github.com/b2ihealthcare/snomed-scg.git</connection>
+		<developerConnection>scm:git:ssh@github.com:b2ihealthcare/snomed-scg.git</developerConnection>
+	</scm>
+	
+</project>

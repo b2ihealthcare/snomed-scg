@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SNOMED CT Compositional Grammar IDE Module
+Bundle-SymbolicName: com.b2international.snomed.scg.ide
+Bundle-Version: 2.3.1.qualifier
+Bundle-Vendor: B2i Healthcare
+Automatic-Module-Name: com.b2international.snomed.scg.ide
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ com.b2international.snomed.scg;visibility:=reexport
+Export-Package: com.b2international.snomed.scg.ide,
+ com.b2international.snomed.scg.ide,
+ com.b2international.snomed.scg.ide.contentassist.antlr,
+ com.b2international.snomed.scg.ide.contentassist.antlr.internal,
+ com.b2international.snomed.scg.ide.contentassist.antlr.lexer
+Import-Package: org.apache.log4j;version="1.2.15"

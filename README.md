@@ -12,7 +12,7 @@ See the official documentation [here](http://snomed.org/scg)
 
 # Supported versions
 
-* 2.3.1 - https://github.com/b2ihealthcare/snomed-ecl/releases/tag/v2.3.1
+* 2.3.1 - https://github.com/b2ihealthcare/snomed-scg/releases/tag/v2.3.1
 
 # Building from source
 
@@ -32,4 +32,4 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 # Versioning
 
-Our [releases](https://github.com/b2ihealthcare/snomed-ecl/releases) use [semantic versioning](http://semver.org). You can find a chronologically ordered list of notable changes in [CHANGELOG.md](CHANGELOG.md).
+Our [releases](https://github.com/b2ihealthcare/snomed-scg/releases) use [semantic versioning](http://semver.org). You can find a chronologically ordered list of notable changes in [CHANGELOG.md](CHANGELOG.md).

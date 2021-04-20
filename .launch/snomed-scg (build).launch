@@ -12,7 +12,7 @@
     <booleanAttribute key="M2_UPDATE_SNAPSHOTS" value="false"/>
     <stringAttribute key="M2_USER_SETTINGS" value=""/>
     <booleanAttribute key="M2_WORKSPACE_RESOLUTION" value="false"/>
-    <stringAttribute key="bad_container_name" value="\snomed-ql\build.launch"/>
+    <stringAttribute key="bad_container_name" value="\snomed-scg\build.launch"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_CLASSPATH_ONLY_JAR" value="false"/>
-    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${project_loc:snomed-ql}"/>
+    <stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${project_loc:snomed-scg}"/>
 </launchConfiguration>

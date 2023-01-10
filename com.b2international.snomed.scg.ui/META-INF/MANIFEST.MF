@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: SNOMED CT Compositional Grammar UI
 Bundle-SymbolicName: com.b2international.snomed.scg.ui;singleton:=true
-Bundle-Version: 2.3.1
+Bundle-Version: 2.3.2.qualifier
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: B2i Healthcare

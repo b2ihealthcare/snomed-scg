@@ -3,7 +3,7 @@
 SNOMED CT Compositional Grammar Implementation with IDE integration(s), user interface using Xtext.
 
 [![build status](https://img.shields.io/github/actions/workflow/status/b2ihealthcare/snomed-scg/maven.yml?branch=main&style=flat-square)](https://github.com/b2ihealthcare/snomed-scg/actions)
-[![latest release](https://img.shields.io/github/tag/b2ihealthcare/snomed-scg.svg?style=flat-square)](https://github.com/b2ihealthcare/snomed-scg/releases/tag/v2.3.0)
+[![latest release](https://img.shields.io/github/tag/b2ihealthcare/snomed-scg.svg?style=flat-square)](https://github.com/b2ihealthcare/snomed-scg/releases/tag/v2.3.2)
 [![GitHub](https://img.shields.io/github/license/b2ihealthcare/snomed-scg.svg?style=flat-square)](https://github.com/b2ihealthcare/snomed-scg/blob/main/LICENSE)
 
 # Documentation
@@ -12,7 +12,7 @@ See the official documentation [here](http://snomed.org/scg)
 
 # Supported versions
 
-* 2.3.1 - https://github.com/b2ihealthcare/snomed-scg/releases/tag/v2.3.1
+* 2.3.1 - https://github.com/b2ihealthcare/snomed-scg/releases/tag/v2.3.2
 
 # Building from source
 

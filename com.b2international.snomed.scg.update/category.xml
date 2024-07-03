@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/com.b2international.snomed.scg.feature_2.3.2.jar" id="com.b2international.snomed.scg.feature" version="2.3.2">
+   <feature url="features/com.b2international.snomed.scg.feature_2.3.3.qualifier.jar" id="com.b2international.snomed.scg.feature" version="2.3.3.qualifier">
       <category name="snomed-scg"/>
    </feature>
-   <feature url="features/com.b2international.snomed.scg.ui.feature_2.3.2.jar" id="com.b2international.snomed.scg.ui.feature" version="2.3.2">
+   <feature url="features/com.b2international.snomed.scg.ui.feature_2.3.3.qualifier.jar" id="com.b2international.snomed.scg.ui.feature" version="2.3.3.qualifier">
       <category name="snomed-scg"/>
    </feature>
    <category-def name="snomed-scg" label="SNOMED CT Compositional Grammar"/>

@@ -13,6 +13,11 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pull-requests: read
+      actions: read
+
     steps:
     - uses: actions/checkout@v2.3.3
     - name: Set up JDK 11
